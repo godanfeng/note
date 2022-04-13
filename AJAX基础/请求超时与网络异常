@@ -1,0 +1,14 @@
+// 超时设置 （2秒）
+xhr.timeout = 2000;
+// 超时回调
+xhr.ontimeout = function(){
+	alert('网络超时，请稍后重试')
+}
+// 网络异常回调
+xhr.onerror = function(){
+	alert('网络异常，请稍后重试')
+}
+
+取消请求
+// 手动取消
+xhr.abort()
