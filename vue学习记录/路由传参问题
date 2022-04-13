@@ -29,3 +29,4 @@
             originPush.call(this,location,() => {},() => {})
         }
     }
+（call与apply区别：相同点（都可以篡改函数的上下文一次），不同点（call参数传递用逗号隔开，apply方法执行，传递数组））
