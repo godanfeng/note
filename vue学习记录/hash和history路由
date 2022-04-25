@@ -1,0 +1,8 @@
+hash模式
+  通过hashchange监听location.hash的变化
+history模式
+  通过popstate监听url的变化
+问题：
+  改变了url中的资源位置,会出现404问题
+解决：
+  需在ngnix上配置一个回退路由,当url跳转不匹配任何资源地址时，会自动回退到index.html
