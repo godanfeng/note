@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 // 1. 引入express
 const express = require('express');
 
@@ -42,7 +40,6 @@ app.all('/json-server', (request, response) => {
 app.listen(8000, () => {
   console.log("服务已经启动, 8000 端口监听中...");
  })
-=======
 // 1. 引入express
 const express = require('express');
 
@@ -85,8 +82,6 @@ app.all('/json-server', (request, response) => {
 app.listen(8000, () => {
   console.log("服务已经启动, 8000 端口监听中...");
  })
->>>>>>> 24354bfbe9e1ee4c16d805e123d7abc4b6035576
-=======
 // 1. 引入express
 const express = require('express');
 
@@ -129,4 +124,3 @@ app.all('/json-server', (request, response) => {
 app.listen(8000, () => {
   console.log("服务已经启动, 8000 端口监听中...");
  })
->>>>>>> 9440c7019f5c21445c89585709c945900cf21bb9
