@@ -1,0 +1,40 @@
+基本使用
+  const proxyName=new Proxy(target,handler)
+  handler是一个包含多种对proxyName操作而影响target的函数的对象
+  
+Vue3响应式核心
+  handler.get()
+    属性读取操作的捕捉器。
+  handler.set()
+    属性设置操作的捕捉器。
+    
+其余的handler中的函数还有
+  handLer对象是一个容纳一批特定属性的占位符对象。它包含有Proxy 的各个捕获器(trap).
+  所有的捕捉器是可选的。如果没有定义某个捕捉器，那么就会保留源对象的默认行为。
+  handler. getPrototypeof()
+    object.getPrototypeof方法的捕捉器。
+  handler.setPrototypeofo
+    object.setPrototypeof方法的捕捉器。
+  handler.isExtensibleo
+    object.isExtensible方法的捕捉器。
+  handler .preventExtensions()
+    object.preventExtensions方法的捕捉器。
+  handler.getOwnPropertyDescriptor()
+    object.getOwnPropertyDescriptor方法的捕捉器。
+  handler.defineProperty(o)
+    object.defineProperty方法的捕捉器
+  handler.has(
+    in操作符的捕捉器。
+  handler.get(o
+    展性读取操作的捕捉器。
+  handler.set(o)
+    用性设置操作的捕捉器。
+  handler.deleteProperty(o)
+    delete操作符的捕捉器。
+  handler. ownKeys(o
+    0bject.getOwnPropertyNames方法和0bject.getOwnPropertySymbols 方法的捕捉器。
+  handler. applyo
+    函数调用操作的捕捉器。
+  handler.constructo
+    new操作符的捕捉器。
+  

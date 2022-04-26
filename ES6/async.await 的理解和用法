@@ -1,0 +1,14 @@
+async/await是什么
+  async/await 是ES7提出的基于Promise的解决异步的最终方案
+  
+async
+  async是一个加在函数前的修饰符，被async定义的函数会默认返回一个Promise对象resolve的值。
+  因此对async函数可以直接then，返回值就是then方法传入的函数。
+
+ await
+  await 也是一个修饰符，只能放在async定义的函数内。可以理解为等待。
+  await 修饰的如果是Promise对象：可以获取Promise中返回的内容（resolve或reject的参数），且取到值后语句才会往下执行；
+  如果不是Promise对象：把这个非promise的东西当做await表达式的结果。
+  1.后跟一个promise实例
+  2.只能在被async包裹的函数中使用
+  3.只有等promise的状态确定后才执行下面的操作  

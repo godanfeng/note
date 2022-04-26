@@ -1,0 +1,32 @@
+1.路由传递参数（对象写法）path是否可以结合params参数一起使用？
+  问：路由跳转参数的时候，对象使用的方法可以是名字，路径写法，但是需要注意，路径这种写法不能与参数一起
+  
+2.如何制定params参数可传可不传？
+  问：如果路由要求提交params参数，但是你不提交params参数，发现一个事件，url会有问题
+      在代表配置路由的时候，在占位的后面加一个问号，params 可以传不传
+      
+3.params参数可以传递也可以不传递，但是如果是空串如何传递？
+  问：使用未解决的解决方案：params 参数可以传递，不传递（空字符串）
+  
+4. 路由组件不能传递数据？
+  问：可以的。
+      布尔值写入法：props：true 只能传递参数
+      对象写法：props：{a:1,b:2} 额外给路由转移一些props
+      函数写法：（$rpute）{
+        返回 {keyword:$route.params.keyword,k:$route.query.k}
+      }
+      
+5.push是一个promise，promise需要传递成功和失败两个参数，我们的push中没有传递。
+  push是VueRouter.prototype的一个方法,在router中的index重写该方法即可
+    //1、先把VueRouter原型对象的push，保存一份
+    let originPush = VueRouter.prototype.push;
+    //2、重写push|replace
+    //第一个参数：告诉原来的push，跳转的目标位置和传递了哪些参数
+    VueRouter.prototype.push = function (location,resolve,reject){
+        if(resolve && reject){
+            originPush.call(this,location,resolve,reject)
+        }else{
+            originPush.call(this,location,() => {},() => {})
+        }
+    }
+（call与apply区别：相同点（都可以篡改函数的上下文一次），不同点（call参数传递用逗号隔开，apply方法执行，传递数组））

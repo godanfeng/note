@@ -1,0 +1,14 @@
+app.all('/json-server', (request, response) => {
+  // 设置响应头, 设置允许跨域
+  response.setHeader('Access-Control-Allow-Origin', '*');
+  // 设置响应头, 设置允许自定义头信息
+  response.setHeader('Access-Control-Allow-Headers', '*');
+  // 响应一个数据
+  const data = {
+    name: 'atguigu'
+  };
+  // 对 对象 进行 字符串 转换
+  let str = JSON.stringify(data)
+  // 设置响应体 
+  response.send(str);
+});

@@ -1,0 +1,13 @@
+POST请求
+  app.post('/server', (request, response) => {
+  // 设置响应头, 设置允许跨域
+  response.setHeader('Access-Control-Allow-Origin', '*');
+  // 设置响应体
+  response.send("Hello Ajax POST");
+});
+
+设置请求头信息
+// 设置请求体内容的类型
+xhr.setRequesHeader('Content-Type','application/x-www-from-urlencoded');
+// 自定义头信息
+xhr.setRequesHeader('name', 'ykyk');

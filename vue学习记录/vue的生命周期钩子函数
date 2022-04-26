@@ -1,0 +1,25 @@
+1.vue的生命周期
+  Vue生命周期是指vue实例对象从创建之初到销毁的过程,
+  vue所有功能的实现都是围绕其生命周期进行的，
+  在生命周期的不同阶段调用对应的钩子函数可以实现组件数据管理和DOM渲染两大重要功能
+2.vue生命周期的特点
+  创建前:
+    beforeCreate 组件实例被创建之初, data和 methods中的数据还没有初始化
+  创建后:
+    created 组件实例已经完全创建, data和 methods都已经初始化好了
+  挂载前:
+    beforeMount 指令已经解析完毕，内存中已经生成dom树，但是尚未挂载到页面中去
+  挂载后:
+    mounted dom渲染完毕页面和内存的数据已经同步
+  更新前:
+    beforeUJpdate 组件数据更新之前调用,此时页面中显示的数据还是旧的，但data 是最新的，页面尚未和最新的数据保持同步
+  更新后:
+    update 组件数据更新之后，页面和data数据已经保持同步，都是最新的
+  销毁前:
+    beforeDestory 组件销毁前调用,vue 实例从运行阶段进入到销毁阶段，这时vue 实例身上所有都可用，还没有真正执行销毁
+  销毁后:
+    destoryed 组件销毁后调用, vue 实例上的所有都不可以用了
+  不常用的钩子函数:
+    activited keep-alive专属，组件被激活时调用，
+    deactivated keep-alive专属，组件被销毁时调用，
+    errorcaptured捕捉子组件错误时调用

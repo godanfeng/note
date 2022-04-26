@@ -1,0 +1,35 @@
+一.vue3的新特性有：
+  1.速度更快
+    vue3相比vue2:
+    重写了虚拟Dom实现
+    编译模板的优化
+    更高效的组件初始化
+    undate性能提高1.3~2倍
+    SSR速度提高了2~3倍
+    
+  2.体积更小
+  （相比Vue2，Vue3整体体积变小了，除了移出一些不常用的API，再重要的是Tree shanking
+  任何一个函数，如ref、reavtived、computed等，仅仅在用到的时候才打包，没用到的模块都被摇掉，打包的整体体积变小）
+    通过webpack的tree-shaking功能，可以将无用模块“剪辑”，仅打包需要的
+    能够tree-shaking，有两大好处：
+      对开发人员，能够对vue实现更多其他的功能，而不必担忧整体体积过大
+      对使用者，打包出来的包体积变小了
+    
+  3.更容易维护
+    compositon Api
+    可与现有的Options API一起使用
+    灵活的逻辑组合与复用
+    Vue3模块可以和其他框架搭配使用
+    更好的Typescript支持
+    VUE3是基于typescipt编写的，可以享受到自动的类型定义提示
+  4.更接近原生
+  5.更容易使用
+  
+二、Vue3新增特性
+  Vue 3 中需要关注的一些新功能包括：
+  framents（在 Vue3.x 中，组件现在支持有多个根节点）
+  Teleport（Teleport 是一种能够将我们的模板移动到 DOM 中 Vue app 之外的其他位置的技术，就有点像哆啦A梦的“任意门”）
+
+vue2 和vue3双向数据绑定原理不同
+  vue2的数据绑定是利用Object.definePropet（）对数据进行劫持 结合 发布订阅模式实现
+  vue3利用Proxy API对数据代理实现
