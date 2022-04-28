@@ -1,4 +1,4 @@
-computed：
+computed：（一定有返回值）
   1、computed是计算属性，也就是依赖某个值或者props通过计算得来得数据；
   2、 computed的值是在getter执行之后进行缓存的，只有在它依赖的数据发生变化，会重新调用getter来计算；
   3、 不支持异步，当computed内有异步操作时无效，无法监听数据的变化；
