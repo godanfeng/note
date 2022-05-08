@@ -1,0 +1,43 @@
+1. transform平移
+  这种方法利用css中的transform函数实现，好处在于通过百分比定位，具有很好的兼容性。
+
+  .a1{
+  	width: 400px;
+  	height:400px;
+  	background-color:red;
+  	position: relative; /* 父容器使用相对定位 */
+  }
+  
+   .a2{
+  	width:100px;
+  	height: 200px;
+  	background-color: orange;
+  	position: absolute; /* 待垂直水平居中的子容器使用绝对定位 */
+  	top:50%;			/* 子容器顶部距离父容器50%的高度 */
+  	left:50%; 			/* 子容器左边距离父容器50%的宽度 */
+  	transform: translate(-50%,-50%);	/* 子容器分别向上和向左移动其高度和宽度的一半的距离 */
+  }
+  
+  2. flex布局
+flex布局就是常说的弹性盒模型。利用html5中的flex布局也能实现垂直水平居中的效果。
+
+  #a1{
+  	width: 200px;
+  	height: 200px;
+  	background-color: red;
+  	display: flex;				/* 父容器使用flex布局 */
+  	justify-content: center;	/* 设置子容器水平居中 */
+  	align-items: center;		/* 设置子容器垂直水平 */
+  }
+  
+  #a2{
+  	width: 50px;
+  	height: 50px;
+  	background-color: aqua;
+  }
+  3.通过自己的计算left和top的值和子绝父相来实现垂直居中。
+单水平居中：
+  1.行内元素
+    如果被设置元素为文本、图片等行内元素时，水平居中是通过给父元素设text-align:center 来实现的
+  2.定宽块状元素当被设置元素为块状元素时用 text-align：center 就不起作用了。满足定宽和块状两个条件的元素是可以通过设置“左右margin”值为“auto”来实现居中的。
+  
