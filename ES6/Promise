@@ -1,0 +1,34 @@
+Promise的诞生目的：
+  异步编程传统的解决方案：事件和回调函数
+  异步编程新的解决方案：Promise
+
+Promise的优点在哪里？即传统异步处理方案与Promise的区别在哪？
+  1.回调函数的指定时机更灵活
+  2.支持链式调用，解决回调地狱问题
+回调地狱:  回调函数套回调函数的情况就叫做回调地狱，
+  //地狱回调
+    setTimeout(function () {  //第一层
+        console.log('');
+        setTimeout(function () {  //第二程
+            console.log('');
+            setTimeout(function () {   //第三层
+                console.log('');
+            }, 1000)
+        }, 2000)
+    }, 3000)
+    
+ Promise解决方法:
+    P.then().then().then().catch()//链式调用//后一个函数的状态由前一个的结果判断
+  
+  
+基本写法：
+  const p = new Promise((resolve,reject)=>{
+      if(){
+        resolve()
+      }else{
+        reject()
+      }
+  })
+  p.then(()=>{},()=>{})//第一个位成功的回调，第二个为失败的回调
+  
+  
