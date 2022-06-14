@@ -1,0 +1,22 @@
+重溯=重绘  回流=重排
+前置知识：
+● 浏览器使用费流式布局模型
+● 浏览器会把HTML解析为DOM，CSS解析为CSSOM，两个组合在一起称为 render树
+重溯
+当CSS或JS改变时 浏览器重新渲染 但 不会改变任意一个盒子的布局  称为浏览器重塑如 改变元素的背景颜色、visibility等CSS
+
+回流
+当CSS或JS改变时 浏览器重新渲染 但 会改变每一个盒子的布局  称为浏览器回流
+如 改变某一盒子大小、添加或删除某一元素等
+
+重溯和回流的时机
+浏览器有一个特殊队列 据估计每隔16ms左右 将队列中所有触发重溯和回流的操作一起执行 优化体验 
+部分操作一旦触发会立刻引起重溯或回流 如下：
+● clientWidth、clientHeight、clientTop、clientLeft
+● offsetWidth、offsetHeight、offsetTop、offsetLeft
+● scrollWidth、scrollHeight、scrollTop、scrollLeft
+● width、height
+● getComputedStyle()
+● getBoundingClientRect()
+原因：
+因为队列中可能会有影响到这些属性或方法返回值的操作，即使你希望获取的信息与队列中操作引发的改变无关，浏览器也会强行清空队列，确保你拿到的值是最精确的。

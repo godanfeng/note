@@ -1,0 +1,11 @@
+为什么需要cookie
+	http协议是无状态的
+	使用cookie可以保存上次的状态
+
+cookie和session的区别
+	cookie存在客户端
+	session存在服务端
+
+cookie和session实现通信状态保存
+当服务器第一次收到客户端请求时生成sessionId,响应时带上cookie字段将sessionId存在客户端的cookie中，下次客户端请求时就会带上cookie，服务端验证sessionId完成校验
+
