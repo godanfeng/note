@@ -1,0 +1,14 @@
+1.Promise.all(promise[])
+	全为fufilledall，all才为fulfilled res为res[ ]
+	有一个为rejected，all就为rejected  err为出现的第一个err
+	传入数组出现非promise实例，全部当做fulfilled的res处理
+
+2.Promise.race(promise[ ])
+	无论fufilled或rejected，返回最快获得res/err的promise
+
+3.Promise.any(promise[ ])
+	第一个fufilled，返回最快获得res的promise
+
+4.Promise.allSettled(promise[ ])
+	当所有promise结束后，返回一个包含每个promise状态和结果的数组
+	

@@ -1,0 +1,34 @@
+浅拷贝：
+	只能复制简单数据类型和复杂数据类型的指针
+	也就是只能遍历复制第一层，复制复杂数据类型的指针，修改newobj也会改变oldobj
+	
+	let oldobj={
+		name:'JX',
+ 	 	age:18,
+  		pet:{
+			pet_name:'Bai',
+ 	   		pet_age:3
+		}
+	}
+
+	let newobj={}
+
+	for(let k in oldobj){
+	  newobj[k]=oldobj[k]
+	}
+
+	console.log(oldobj);  
+	console.log(newobj);
+	//newobj与oldobj相同
+	-----------------------------------------
+	newobj.age=20
+	newobj.pet.pet-age=5
+
+	console.log(oldobj.age);//18
+	console.log(newobj.age);//20
+
+	console.log(oldobj.pet.pet_age);//5
+	console.log(newobj.pet.pet_age);//5
+
+深拷贝：
+	对所有类型元素进行深度遍历复制
