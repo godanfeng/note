@@ -1,0 +1,13 @@
+1.typeof的结果不同
+  console.log(typeof null,typeof undefined);
+  //object undefined
+  
+2.==和===的结果不同(Number()转换后的结果不同)
+  console.log(null==undefined,null===undefined)
+  //true false
+  
+3.隐式转换结果不同
+  console.log(null+1,undefined+1)
+  //1 NAN
+  
+  万能区分方法: Obejct.prototype.toString.call( )
