@@ -1,0 +1,27 @@
+ESM使用方法：
+  export {}
+  import{} from './'
+
+  export default a  //单文件只能有一个
+  import a from './'  
+  
+CJS使用方法
+  require-导入
+  module.exports-导出  module.exports是导出的对象本体
+  默认exports指针指向module.exports 
+  
+  //server.js
+  let a = 1
+  let b = 2
+  exports.b=b
+  module.exports.a = {op:9999}
+  ----------------------------------
+  //naother.js
+  let a = require('./server')
+  console.log(a);
+  //{ b: 2, a: { op: 9999 } }
+  
+ESM和CJS的区别：
+  1.ESM的import是引用，CJS的require是拷贝
+  2.ESM引入的变量无法修改,CJS引入的可以
+  3.ESM加载资源是异步的,CJS加载资源是同步的(所以CSJ无法在浏览器中使用）
