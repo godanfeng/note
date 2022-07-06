@@ -1,0 +1,7 @@
+一、基本概念：标准模型+IE模型
+  盒模型：盒模型又称框模型（Box Model）,包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素。
+二、标准模型和IE模型的区别
+  IE模型元素宽度width = content + padding + border，高度计算相同
+  标准模型元素宽度width=content，高度计算相同
+三、css如何设置获取这两种模型的宽和高
+  通过css3新增的属性 box-sizing: content-box | border-box分别设置盒模型为标准模型（content-box）和IE模型（border-box）
