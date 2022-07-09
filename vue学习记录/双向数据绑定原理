@@ -1,0 +1,6 @@
+实现vue的双向数据绑定，是采用数据劫持结合发布者和订阅者模式的方式，
+通过Object.defineProperty()来劫持各个属性的setter，getter，
+在数据变动时发布消息给订阅者，
+触发相应的监听回调，
+getter函数里面执行的任务是watcher订阅者, 
+而setter函数执行的任务是发布者。
