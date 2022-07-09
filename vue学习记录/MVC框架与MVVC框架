@@ -1,0 +1,10 @@
+传统的MVC指的是，用户操作会请求服务端路由，路由拦截分发请求，调用对应的控制器来处理。控制器会获取数据，然后数据与模板结合，将结果返回给前端，页面重新渲染。
+数据流是单向的，view——> controler——> model ——> controler ——>view。
+是一个单向的循环流。
+view直接到model层的操作无法在前端实现。
+比如当一个<input>值发生了变化，我们在另一个<div id="val">里想要显示这个input值，需要先监听input事件，
+再将input事件里的event.target.value赋值到document.getElementById("val").innerHtml上。一个小小的功能要不停的对DOM进行操作，非常的影响网页性能。
+
+传统的前端会将数据手动渲染到页面上，MVVM模式不需要用户手动操作DOM元素，将数据绑定到viewModel层上，会自动将数据渲染到页面中。
+视图变化会通知viewModel层更新数据，viewModel就是MVVM模式的桥梁。
+数据驱动数据流动时双向的，model——>viewModel<——>view
